@@ -4,6 +4,8 @@
     {
         Console.WriteLine("Hello, World!");
         multiples3_5();
+        Console.ReadKey();
+        fibonacciEvens();
     }
 
     static void multiples3_5()
@@ -17,5 +19,18 @@
             }
         }
         Console.WriteLine("The sum of all numbers divisible by 3 or 5 between 1 and 1000 is " + sumOfNumbers);
+    }
+
+    static void fibonacciEvens()
+    {
+        int previousNum = 0;
+        int currentNum = 1;
+        for(int i = 0; i < 20; i++)
+        {
+            int temp = currentNum + previousNum;
+            Console.Write($"{currentNum + previousNum} ");
+            previousNum = currentNum;
+            currentNum = temp;
+        }
     }
 }
