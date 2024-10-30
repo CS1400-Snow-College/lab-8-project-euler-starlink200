@@ -11,7 +11,7 @@
     static void multiples3_5()
     {
         int sumOfNumbers = 0;
-        for(int i = 1; i < 1001; i++)
+        for(int i = 1; i < 1000; i++)
         {
             if(i%3 == 0 || i%5 == 0)
             {
@@ -25,12 +25,17 @@
     {
         int previousNum = 0;
         int currentNum = 1;
-        for(int i = 0; i < 20; i++)
+        int sumOfNumbers = 0;
+        while(currentNum < 4000000)
         {
             int temp = currentNum + previousNum;
-            Console.Write($"{currentNum + previousNum} ");
+            if(temp % 2 == 0)
+            {
+                sumOfNumbers += currentNum + previousNum;
+            }
             previousNum = currentNum;
             currentNum = temp;
         }
+        Console.WriteLine($"The sum of even terms of the Fibonnacci Sequence under 4,000,000 is {sumOfNumbers}");
     }
 }
