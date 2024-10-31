@@ -1,4 +1,6 @@
-﻿internal class Program
+﻿using System.Runtime.InteropServices;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
@@ -6,6 +8,8 @@
         multiples3_5();
         Console.ReadKey();
         fibonacciEvens();
+        Console.ReadKey();
+        smallestMultiple();
     }
 
     static void multiples3_5()
@@ -37,5 +41,33 @@
             currentNum = temp;
         }
         Console.WriteLine($"The sum of even terms of the Fibonnacci Sequence under 4,000,000 is {sumOfNumbers}");
+    }
+
+    static void smallestMultiple()
+    {
+        bool divisible = false;
+        int possibleNum = 1;
+        int correctCount = 0;
+        do
+        {
+            correctCount = 0;
+            for(int i = 1; i < 21; i++)
+            {
+                if(possibleNum % i == 0)
+                {
+                    correctCount++;
+                }
+            }
+            if(correctCount == 20)
+            {
+                divisible = true;
+            }
+            else
+            {
+                possibleNum++;
+            }
+        }
+        while(!divisible);
+        Console.WriteLine($"The lowest number divisble by the numbers 1-20 {possibleNum}");
     }
 }
