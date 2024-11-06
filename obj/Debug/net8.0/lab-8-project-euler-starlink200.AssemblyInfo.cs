@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lab-8-project-euler-starlink200")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a98526a55ea58970e124deb6187e9333c21d8b1d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1da7dd8d7d0e2b21686d99bc645293de2deea341")]
 [assembly: System.Reflection.AssemblyProductAttribute("lab-8-project-euler-starlink200")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lab-8-project-euler-starlink200")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

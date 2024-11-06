@@ -10,6 +10,10 @@ internal class Program
         fibonacciEvens();
         Console.ReadKey();
         smallestMultiple();
+        Console.ReadKey();
+        sumSquareDifference();
+        Console.ReadKey();
+        sumOfPrimes();
     }
 
     static void multiples3_5()
@@ -69,5 +73,44 @@ internal class Program
         }
         while(!divisible);
         Console.WriteLine($"The lowest number divisble by the numbers 1-20 {possibleNum}");
+    }
+
+    static void sumSquareDifference()
+    {
+        int squareSum = 0;
+        int sumSquared = 0;
+        for(int i = 1; i < 101; i++)
+        {
+            squareSum += i*i;
+            sumSquared += i;
+        }
+        int difference = sumSquared*sumSquared - squareSum;
+        Console.WriteLine($"The difference between the sum of the first 100 numbers squared and the squared sums of the first 100 numbers is {difference}");
+    }
+
+    static void sumOfPrimes()
+    {
+        int sum = 0;
+        int num = 0;
+
+        while(num <= 20)
+        {
+            //start count at 0, since a number will be tested against 1 and itself in the loop
+            int count = 0;
+            num++;
+            for(int i = 1; i < 11; i++)
+            {
+                if(num%i == 0)
+                {
+                    count++;
+                }
+            }
+            if(count == 2)
+            {
+                sum += num;
+                //Console.WriteLine("added to the sum");
+            }
+        }
+        Console.WriteLine($"The sum of all primes under 2 million is {sum}");
     }
 }
