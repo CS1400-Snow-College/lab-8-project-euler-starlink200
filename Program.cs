@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 internal class Program
 {
@@ -90,26 +91,30 @@ internal class Program
 
     static void sumOfPrimes()
     {
-        int sum = 0;
+        const int twoMil = 2000000;
+        double sum = 0;
         int num = 0;
-
-        while(num <= 20)
+        int count = 0;
+        while(num < twoMil)
         {
-            //start count at 0, since a number will be tested against 1 and itself in the loop
-            int count = 0;
-            num++;
-            for(int i = 1; i < 11; i++)
+            //start count at 0, since a number won't be tested against itself or 1
+            count = 2;
+            for(int i = 2; i <= Math.Sqrt(num); i++)
             {
-                if(num%i == 0)
+                if(num%i == 0 && num != i)
                 {
                     count++;
                 }
+                if(count >= 3)
+                {
+                    i = num + 1;
+                }
             }
-            if(count == 2)
+            if(count <= 2 && num != 1)
             {
                 sum += num;
-                //Console.WriteLine("added to the sum");
             }
+            num++;
         }
         Console.WriteLine($"The sum of all primes under 2 million is {sum}");
     }
